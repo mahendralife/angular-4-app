@@ -1,0 +1,81 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    
+      <mat-card class="form-container">
+        <h1 class="heading">Sign Up For FREE</h1>
+        <form novalidate (ngSubmit) ="submitForm()" #form="ngForm">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <mat-form-field class="md-block">
+
+                <mat-icon matSuffix (click)="username.value=null">{{username.value ? 'close':'account_circle'}}</mat-icon>
+                <input matInput #username
+                placeholder="Enter username or email" 
+                [formControl]="usernameControl" name="username" >
+                <mat-hint align="end">
+                    Username must be unique
+                </mat-hint>
+                <mat-error *ngIf="usernameControl.hasError('required')">
+                Username  is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <div class="spacer">&nbsp;</div>
+            <mat-form-field class="md-block">
+
+                <mat-icon matSuffix (click)="name.value=null">{{name.value ? 'close':'people'}}</mat-icon>
+                <input matInput #name
+                placeholder="Enter your full name" 
+                [formControl]="nameControl" [(ngModel)]="user.name" name="name" >
+                <mat-hint align="end"> Name must be unique </mat-hint>
+                <mat-error *ngIf="nameControl.hasError('required')">  Name  is <strong>required</strong></mat-error>
+            </mat-form-field>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-form-field class="md-block">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <input matInput #password
+              [type]="hide ? 'password' : 'text'"
+              placeholder="Enter your password " 
+              [formControl]="passwordControl" [(ngModel)]="user.password" name="password" >
+    
+            <mat-error *ngIf="passwordControl.hasError('required')">
+              Password  is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <div class="spacer">&nbsp;</div>
+
+          <mat-form-field class="md-block">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              <input matInput #password
+                [type]="hide ? 'password' : 'text'"
+                placeholder="Confirm Password  " 
+                [formControl]="confirmPassword" [(ngModel)]="user.confirmPassword" name="confirmPassword" >
+      
+              <mat-error *ngIf="confirmPassword.hasError('required')">
+                Confirm Password  is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+
+        </div>
+         
+    
+        <div class="space"></div>
+       
+        <button mat-raised-button color="warn" type="submit" class="md-block">
+            Register <mat-icon>arrow_forward </mat-icon>
+        </button>
+        <div class="space"></div>
+        <div fxLayout="row" fxLayoutAlign="space-between" class="text-center">
+           <small>By clicking on 'Register' above , you confirm that you accept the <a>term and condition</a>
+           </small> 
+        </div>
+
+        <div class="space"></div>
+        <mat-divider></mat-divider>
+    
+        <p class="text-center " > Already have an account? <a class="button-link" routerLink="/login"> Sign In here </a>
+      
+        </form>
+      </mat-card>
+    
+    </div>

@@ -1,0 +1,51 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  
+  <mat-card class="form-container">
+    <h1 class="heading">Sign In to your Account</h1>
+    <form novalidate (ngSubmit) ="submitForm(form)" [formGroup]="form" >
+      
+      <mat-form-field class="md-block">
+        <mat-icon matSuffix (click)="user.username=null">{{user.username ? 'close':'account_circle'}}</mat-icon>
+        
+        <input  matInput name="username" [(ngModel)]="user.username" placeholder="Enter username" 
+        required  formControlName="username">
+        <mat-hint align="end">
+          Username  must be registered with our domain
+        </mat-hint>
+        
+        <mat-error *ngIf="form.controls.username._errors">
+          Username  is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      
+      <mat-form-field class="md-block">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <input matInput name="password" required [(ngModel)]="user.password"
+        [type]="hide ? 'password' : 'text'"
+        placeholder="Enter your password " 
+        formControlName="password" >
+        
+        <mat-error *ngIf="form.controls.password._errors">
+          Password  is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <mat-checkbox color="primary"> Remember me on this computer</mat-checkbox>
+      </div>
+      
+      <div class="space"></div>
+      
+      <button mat-raised-button color="warn" type="submit" class="md-block">
+        Login <mat-icon>arrow_forward </mat-icon>
+      </button>
+      
+      <div class="space"></div>
+      <mat-divider></mat-divider>
+      
+      <p class="text-center " > Don’t have account? <a class="button-link" routerLink="/signup"> Register here</a>
+    </form>
+      
+  </mat-card>
+    
+</div>

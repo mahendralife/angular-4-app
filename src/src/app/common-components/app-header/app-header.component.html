@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <div  class="md-container" >
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="md-block">
+        <div class="logo"> Angular App <i> Bootstrap, Material, Flex</i> </div>
+        <div fxLayout="row">
+
+            <button mat-button> 
+               Documentation
+            </button>
+
+            A-{{isLogin | json}}
+            <button mat-button routerLink="signup"> 
+                <mat-icon>person_add</mat-icon>
+                <span>Signup </span>
+            </button>
+            
+            <button mat-button routerLink="login"> 
+                <mat-icon>account_circle</mat-icon>
+                <span>Login</span>
+            </button>
+
+        </div>
+      </div>
+    </div>
+</mat-toolbar>
+
