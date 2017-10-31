@@ -1,0 +1,14 @@
+.user-list {
+    padding: 25px 0;
+}
+.user-list > mat-card {
+    margin: 10px;
+    min-width: 200px;
+}
+.user-list mat-card-header  img{    
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;}
+    .user-list    mat-card-title {
+        text-transform: uppercase;
+    }
