@@ -1,4 +1,26 @@
-# Angular4App
+# AngularApp
+
+
+How To creat new app with scss
+
+ng new (angular-app) --prefix amte --style scss
+
+Install Package 
+
+npm i -s @angular/material @angular/cdk @angular/animations
+
+Include material theme 
+
+https://material.angular.io/guide/theming
+
+Install Bootstrap 4 
+
+npm install --save @ng-bootstrap/ng-bootstrap
+
+Add Bootstrap CSS
+    angular-cli.json 
+    "styles": ["../node_modules/bootstrap/dist/css/bootstrap.min.css"]
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
 

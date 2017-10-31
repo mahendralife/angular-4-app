@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular4-app"
+    "name": "angular-app"
   },
   "apps": [
     {
@@ -17,10 +17,13 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.scss",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
+      "map": {
+        "@angular/flex-layout": "npm:@angular/flex-layout-builds/bundles/flex-layout.umd.js"
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -54,7 +57,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   }
 }
