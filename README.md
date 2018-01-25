@@ -1,5 +1,7 @@
 # AngularApp
 
+create a production build with optimize:
+ng build --prod --bh 'base_url_path'--build-optimizer  --vendor-chunk=true
 
 How To creat new app with scss
 
